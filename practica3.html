@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora fundamentos</title>
+    <body>
+    <center><h2><p style="color:#71ca35";>Calculadora básica <br> Jesus Alejandro Benitez Perez </p></h2></center>
+    <form action="">
+        <table  style="background-color:rgb(168, 219, 241);" border="4" align="center">
+            <tr>
+                <td>
+                    Ingrese el número 1:
+                    <input type = "number" name = "art1" id = "art1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Ingrese el número 2:
+                    <input type = "number" name = "art2" id = "art2">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <br>
+                    <input style="background-color:rgb(32, 100, 236);"type="button" value="Sumar" onclick= "Calcular(1);">
+                    <input style="background-color:rgb(32, 100, 236);"type="button" value="Restar" onclick="Calcular(2);">
+                    <input style="background-color:rgb(32, 100, 236);"type="button" value="Multiplicar" onclick="Calcular(3);">
+                    <input style="background-color:rgb(32, 100, 236);"type="button" value="Dividir" onclick="Calcular(4);">
+                    <input style="background-color:rgb(32, 100, 236);"type="button" value="Potercia" onclick="Calcular(5);">
+                    <br>
+                </td>
+            </tr>
+            
+        </table>
+    </form>
+   
+    <script>
+        
+
+        
+        
+       /*TRABAJO echo por [ Jesus Alejandro Benitez Perez ]*/
+        function calculo(e1,tv,e2) 
+        {
+            let resil = 0;
+            switch(tv)
+            {
+                case 1: return resil = e1+e2;
+                case 2:return  resil = e1-e2;
+                case 3:return  resil = e1*e2;
+                case 4:return  resil = e1/e2;
+                case 5:return  resil = Math.pow(e1, e2);
+            }
+        }
+        function Calcular(t)
+        {
+            let a = parseInt(document.getElementById("art1").value);
+            let b = parseInt(document.getElementById("art2").value);
+            let m =  calculo(a,t,b);
+            return  alert("El valor es: "+m);
+
+        
+        }
+        
+
+  
+      
+        
+       
+
+
+    </script>
+    <center><h3>Formula Cuadrática</h3></center>
+    <form action="">
+        <table border="2" align="center">
+            <tr>
+                <td>
+                    Ingrese el valor a:
+                    <input type = "number" name = "a1" id = "a1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Ingrese el valor b:
+                    <input type = "number" name = "a2" id = "a2">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Ingrese el valor c:
+                    <input type = "number" name = "a3" id = "a3">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type = "button" value ="Calcular" onclick ="Cuadratica_Cal();">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        //
+    function Cuadratica_Cal() 
+    {
+        let a = parseInt(document.getElementById("a1").value);
+        let b = parseInt(document.getElementById("a2").value);
+        let c = parseInt(document.getElementById("a3").value);
+        let parte1 = (-1)*b;
+        let parte2 = Math.pow(b,2)-(4*a*c);
+        let parte3 = 2*a;
+        if (parte2 > 0) {
+            let x1 = (parte1 - Math.sqrt(parte2))/parte3;
+            let x2 = (parte1 + Math.sqrt(parte2))/parte3;
+            alert("Los  valores de x son: "+ parseFloat(x1) + " y " +parseFloat(x2));
+        } else {
+            let x3 = parte1/parte3;
+            alert("El valor de x es: "+ parseFloat(x3));
+        }
+    }
+    </script>
+
+
+    
+</body>
+</html> 
